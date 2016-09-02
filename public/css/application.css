@@ -59,6 +59,21 @@ table tr:last-child td:last-child {
   text-align: left;
 }
 
+.footer-links ul li {
+  display: block;
+  margin: 0 25px 0 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-rendering: optimizelegibility;
+  padding-left: 0;
+  font-family: brandon-grotesque,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.footer-links ul li a {
+  color: #a5adb1;
+}
+
 #nav {
   position: absolute;
   top: 0;

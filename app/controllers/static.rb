@@ -10,15 +10,19 @@ post '/urls' do
     @urls = Url.all.order("click_count DESC")
     erb :'static/index'
   else
-    url = Url.new(long_url: params[:long_url])
-    url.shorten
-    if url.save
-      redirect to '/'
+    if !params[:long_url].empty?
+      url = Url.new(long_url: params[:long_url])
+      url.shorten
+      if url.save
+        redirect to '/'
+      else
+        @flash = "Invalid URL. Did you include 'http://' or 'https://'?"
+      end
     else
-      @flash = "Invalid URL. Did you include 'http://' or 'https://'?"
-      @urls = Url.all.order("click_count DESC")
-      erb :'static/index'
+      @flash = "URL cannot be blank!"
     end
+    @urls = Url.all.order("click_count DESC")
+    erb :'static/index'
   end
 end
 
