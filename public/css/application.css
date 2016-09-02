@@ -152,7 +152,16 @@ table tr:last-child td:last-child {
   height: 60px;
 }
 
-#link-table {
+#link-table-container {
   padding-top: 72px;
   padding-bottom: 72px;
+}
+
+#flash {
+  display: none;
+  /*position: absolute;*/
+  width: 100%;
+  transform: all 300ms ease-in-out;
+  padding: 10px ;
+  background-color: lightgreen;
 }

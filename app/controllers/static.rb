@@ -6,23 +6,24 @@ end
 post '/urls' do
   url = Url.find_by_long_url(params[:long_url])
   if url
-    @flash = "#{url.long_url} has already been added before."
-    @urls = Url.all.order("click_count DESC")
-    erb :'static/index'
+    return { flash: "#{url.long_url} has already been added before." }.to_json
+    # @urls = Url.all.order("click_count DESC")
+    # erb :'static/index'
+
   else
     if !params[:long_url].empty?
       url = Url.new(long_url: params[:long_url])
       url.shorten
       if url.save
-        redirect to '/'
+        return { url: url }.to_json
       else
-        @flash = "Invalid URL. Did you include 'http://' or 'https://'?"
+        return { flash: "Invalid URL. Did you include 'http://' or 'https://'?"}.to_json
       end
     else
-      @flash = "URL cannot be blank!"
+      return { flash: "URL cannot be blank!" }.to_json
     end
-    @urls = Url.all.order("click_count DESC")
-    erb :'static/index'
+    # @urls = Url.all.order("click_count DESC")
+    # erb :'static/index'
   end
 end
 
