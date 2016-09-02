@@ -14,9 +14,10 @@ $(document).ready(function(){
         }
         if (data.url != undefined){
           console.log(data);
+          var listNumber = parseInt($("#link-table tr:last td:first").text()) + 1;
           $("#link-table").append("\
             <tr class='tr-content'>\
-              <td>X.</td>\
+              <td>" + listNumber + "</td>\
               <td>" + data.url.long_url + "</td>\
               <td>\
                 <a href='http://localhost:9393/" + data.url.short_url + "' target='_blank'>http://localhost:9393/" + data.url.short_url + "\
@@ -25,6 +26,7 @@ $(document).ready(function(){
               <td class='center'>" + data.url.click_count + "</td>\
             </tr>\
           ");
+          $("#shortener_form").children("input").first().val("");
         }
       }
     })

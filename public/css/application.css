@@ -159,8 +159,10 @@ table tr:last-child td:last-child {
 
 #flash {
   display: none;
-  /*position: absolute;*/
-  width: 100%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  margin: 0 auto;
   transform: all 300ms ease-in-out;
   padding: 10px ;
   background-color: lightgreen;
