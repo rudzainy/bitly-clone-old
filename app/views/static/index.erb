@@ -1,4 +1,37 @@
-<form action="/urls" method="post">
-    <input type="text" name="long_url">
-    <input type="submit" value="Submit">
-</form>
+<div id="header">
+  <div class="container container-center">
+    <h1>
+      THE LINK KNOWS ALL. SO CAN YOU.
+    </h1>
+    <div class="sub-heading">
+      Own your links with Bitly, the world’s leading customer experience platform.
+    </div>
+    <form action="/urls" method="post" id="shortener_form">
+        <input type="text" name="long_url" placeholder="Paste a link to shorten it">
+        <input type="submit" value="SHORTEN">
+    </form>
+  </div>
+</div>
+<div id="link-table">
+  <div class="container container-center">
+    <table>
+      <tr>
+        <th class="left">No.</th>
+        <th class="left">Long URL</th>
+        <th class="left">Short URL</th>
+        <th class="center">Click Count</th>
+      </tr>
+      <% @urls.each_with_index do |url, index| %>
+        <tr class="tr-content">
+          <td><%= index + 1 %>.</td>
+          <td><%= url.long_url %></td>
+          <td>
+            <a href="http://localhost:9393/<%= url.short_url %>" target="_blank">http://localhost:9393/<%= url.short_url %>
+            </a>
+          </td>
+          <td class="center"><%= url.click_count %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

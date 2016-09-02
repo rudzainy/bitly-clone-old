@@ -1,0 +1,143 @@
+a {
+  color: #e45212;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table, th, td {
+  border: 1px solid #aaa;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  /*border-radius: 3px;*/
+  /*overflow: auto;*/
+}
+
+th, td {
+  padding: 10px;
+}
+
+th {
+  color: white;
+  background-color: #e45212;
+}
+
+/*table tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}*/
+
+.tr-content:hover {
+  background-color: #eee;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 920px;
+  position: relative;
+}
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+#nav {
+  position: absolute;
+  top: 0;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+#nav img {
+  height: 43px;
+}
+
+#header {
+  padding-top: 110px;
+  padding-bottom: 48px;
+  background: url('/img/header.jpg') top center no-repeat;
+  background-size: cover;
+}
+
+#header h1 {
+  font-family: "brandon-grotesque","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  margin: 0 0 8px 0;
+  color: #fff;
+  font-weight: 500;
+}
+
+#header .sub-heading {
+  font-size: 21px;
+  color: #fff;
+  margin-bottom: 52px;
+}
+
+#shortener_form {
+  display: flex;
+}
+
+#shortener_form input {
+  padding: 15px 25px;
+  border: none;
+}
+
+#shortener_form input[type=text] {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-size: 18px;
+  height: 60px;
+  width: 640px;
+  color: #e45212;
+}
+
+#shortener_form input[type=text]:focus {
+  border: 1px solid #e45212;
+  outline: none;
+}
+
+#shortener_form input[type=text]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #666;
+}
+#shortener_form input[type=text]::-moz-placeholder { /* Firefox 19+ */
+  color: #666;
+}
+#shortener_form input[type=text]:-ms-input-placeholder { /* IE 10+ */
+  color: #666;
+}
+#shortener_form input[type=text]:-moz-placeholder { /* Firefox 18- */
+  color: #666;
+}
+
+#shortener_form input[type=submit] {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #e45212;
+  color: white;
+  font-size: 13px;
+  height: 60px;
+}
+
+#link-table {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
